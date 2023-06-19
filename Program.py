@@ -6,12 +6,14 @@ def play():
     while input_command != "6":
         Menu.list_program()
         input_command = input().strip()
-        if input_command == "1" :
+        if input_command == "1":
             f.note_add()
-
-
-
-            
+        if input_command == "2":
+            f.searth_note("all")
+            f.delete_and_edit("delete")
+        if input_command == "3" :
+            f.searth_note("all")
+            f.delete_and_edit("edit")
         if input_command == "4":
             f.searth_note("index")
         if input_command == "5":

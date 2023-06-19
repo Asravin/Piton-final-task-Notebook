@@ -2,7 +2,7 @@ import Notebook
 import Menu
 import Read_text
 import Write_text
-number = 4
+number = 5
 
 
 def note_add():
@@ -34,13 +34,28 @@ def searth_note(text):
     if boolean == True:
         print("Заметок не найдено ")
 
-
-
-
 def delete_and_edit(text):
     index = input("Введите индекс заметки: ")
     arr = Read_text.read_text()
     boolean = True
+    for notes in arr:
+        if index == Notebook.book.get_index() :
+            boolean = False
+            if text == "edit":
+                note = Menu.input_text(number)
+                Notebook.book.list_text(notes, note.get_text())
+                Notebook.book.list_body(notes, note.get_body())
+                Notebook.book.list_date(notes)
+                print("Заметка изменена ")
+            if text == "delete":
+                arr.remove(notes)
+                print("Заметка удалена ")
+            if text == "searth_note":
+                print(Notebook.book.map(notes))
+    if boolean == True:
+        print("Заметка не найдена ")
+    Write_text.write_text(arr, "a")
+
 
 
 
