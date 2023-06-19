@@ -3,7 +3,7 @@ import Functional as f
 
 def play():
     input_command = " "
-    while input_command != "6":
+    while input_command != "7":
         Menu.list_program()
         input_command = input().strip()
         if input_command == "1":
@@ -18,4 +18,7 @@ def play():
             f.searth_note("index")
         if input_command == "5":
             f.searth_note("date")
-        break
+        if input_command == "6":
+            f.searth_note("all")
+        if input_command == "7":
+            break

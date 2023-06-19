@@ -10,10 +10,10 @@ def input_text(text, n):
     
 
 def input(number):
-    text = input_text(("Введите название Заголовка: "), number)
-    body = input_text(("Введите текст: "), number)
+    text = input_text(input("Введите название Заголовка: "), number)
+    body = input_text(input("Введите текст: "), number)
     return Notebook.book(text = text, body = body)
 
 def list_program():
-    print("МЕНЮ:\n \n1 - Создать заметку \n2 - Удалить заметку \n3 - Изменить заметку \n4 - Найти заметку по Индексу \n5 - Найти заметку по дате написания" )
+    print("МЕНЮ:\n \n1 - Создать заметку \n2 - Удалить заметку \n3 - Изменить заметку \n4 - Найти заметку по Индексу \n5 - Найти заметку по дате написания \n6 - Показать все заметки \n7 - Выход")
 
