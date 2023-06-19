@@ -15,6 +15,32 @@ def note_add():
     Write_text.write_text(arr, "a")
     print("Заметка успешно добавлена ")
 
+def searth_note(text):
+    boolean = True
+    arr = Read_text.read_text()
+    if text == "date":
+        date = input("Введите дату в формате day.month.year: ")
+        for notes in arr:
+            if text == "all":
+                boolean = False
+                print(Notebook.book.map(notes))
+            if text == "index":
+                boolean = False
+                print("Index: " + Notebook.book.get_index(notes))
+            if text == "date":
+                boolean = False
+                if date in Notebook.book.get_date(notes):
+                    print(Notebook.book.map(notes))
+    if boolean == True:
+        print("Заметок не найдено ")
+
+
+
+
+def delete_and_edit(text):
+    index = input("Введите индекс заметки: ")
+    arr = Read_text.read_text()
+    boolean = True
 
 
 
