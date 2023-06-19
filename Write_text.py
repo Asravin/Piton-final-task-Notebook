@@ -5,7 +5,7 @@ def Write_text(array, mode):
     text.seek(0)
     text.close()
     text = open("notes.csv", mode = mode, encoding = "UTF-8")
-    for note in array:
-        text.write(Notebook.Notebook.string(note))
+    for i in array:
+        text.write(Notebook.Notebook.string(i))
         text.write("\n")
     text.close
