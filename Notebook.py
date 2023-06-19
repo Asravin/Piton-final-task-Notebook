@@ -1,7 +1,7 @@
 from datetime import datetime
 import uuid
 
-class Notebook:
+class book:
     def initialization(book, index = str(uuid.uuid1())[0:3], text = "текст", body = "текст", date = str(datetime.now().strftime("%d.%m.%Y %H:%M:%S"))):
         book.index = index
         book.text = text
