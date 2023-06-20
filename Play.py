@@ -1,2 +1,2 @@
-import Program as p
+import program as p
 p.play()

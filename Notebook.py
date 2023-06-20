@@ -1,18 +1,18 @@
 from datetime import datetime
 import uuid
 
-class book:
-    def initialization(book, index = str(uuid.uuid1())[0:3], text = "текст", body = "текст", date = str(datetime.now().strftime("%d.%m.%Y %H:%M:%S"))):
-        book.index = index
-        book.text = text
-        book.body = body
-        book.date = date
+class Note:
+    def __init__(self,  id = str(uuid.uuid1())[0:2],  temp = "текст", body = "текст", date = str(datetime.now().strftime("%d.%m.%Y %H:%M:%S"))):
+        self.id = id
+        self.temp = temp
+        self.body = body
+        self.date = date
     
     def get_index(note):
-        return note.index
+        return note.id
     
-    def get_text(note):
-        return note.text
+    def get_temp(note):
+        return note.temp
     
     def get_body(note):
         return note.body
@@ -21,10 +21,10 @@ class book:
         return note.date
     
     def list_index(note):
-        note.index = str(uuid.uuid1())[0:3]
+        note.id = str(uuid.uuid1())[0:2]
 
-    def list_text(note, text):
-        note.text = text
+    def list_temp(note, temp):
+        note.temp = temp
     
     def list_body(note, body):
         note.body = body
@@ -32,8 +32,8 @@ class book:
     def list_date(note):
         note.date = str(datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
     
-    def string(note):
-        return note.index + note.text + note.body + note.date
+    def string_text(note):
+        return note.id + ';' + note.temp + ';' + note.body + ';' + note.date
 
     def map(note):
-        return "\n Index: " + note.index + "\n" + "Заголовок" + note.text + "\n" + "Текст заметки" + "\n" + note.body + "\n" + "Дата" + note.date
+        return '\nID: ' + note.id + '\n' + 'Заголовок' + note.temp + '\n' + 'Текст заметки' + '\n' + note.body + '\n' + 'Дата' + note.date
